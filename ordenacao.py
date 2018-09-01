@@ -1,5 +1,5 @@
 #-*- coding: UTF-8 -*-
-from funcoes_auxiliares import troca, seq, seleciona, insere, amontoa, desce
+from funcoes_auxiliares import *
 
 def bsort(v):
     n = len(v)
@@ -27,3 +27,7 @@ def hsort(v):
     for i in reversed(range(n)):
         troca(v, 0, i)
         desce(v, 0, i)
+
+
+def msort(v):
+    ms(v, 0, len(v)-1)

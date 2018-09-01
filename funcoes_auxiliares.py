@@ -36,6 +36,29 @@ def amontoa(v):
         desce(v, i, n)
 
 
+def intercala(v, p, m, u):
+    n = (u-p)+1
+    i, j, k = p, m+1, 0
+    w = [0]*n
+
+    while i <= m and j <= u:
+        if v[i] < v[j]: w[k], i, k = v[i], i+1, k+1
+        else: w[k], j, k = v[j], j+1, k+1
+
+    while i <= m: w[k], i, k = v[i], i+1, k+1
+    while j <= u: w[k], j, k = v[j], j+1, k+1
+
+    for k in range(n): v[k+p] = w[k]
+
+
+def ms(v, p, u):
+    if p == u: return
+    m = (p+u)//2
+    ms(v, p, m)
+    ms(v, m+1, u)
+    intercala(v, p, m ,u)
+
+
 
 def seq(n, *args):
     if len(args) == 0: return sample(list(range(n*10)), n)
