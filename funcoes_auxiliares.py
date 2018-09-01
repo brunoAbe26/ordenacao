@@ -83,8 +83,14 @@ def crescente(v):
     return True
 
 
-def tempo(f, v):
+def decrescente(v):
+    n = len(v)
+    for i in reversed(range(1, n)):
+        if v[i] > v[i-1]: return False
+    return True
 
+
+def tempo(f, v):
     t_inicial = time()
     f(v)
     print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time()-t_inicial))
