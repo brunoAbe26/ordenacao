@@ -9,7 +9,8 @@ dict_algoritmos = {
     'ssort': 'Selection',
     'isort': 'Insertion',
     'hsort': 'Heap',
-    'msort': 'Merge'
+    'msort': 'Merge',
+    'qsort': 'Quick'
 }
 
 def troca(v, i, j): v[i], v[j] = v[j], v[i]
@@ -65,6 +66,27 @@ def ms(v, p, u):
     ms(v, p, m)
     ms(v, m+1, u)
     intercala(v, p, m ,u)
+
+
+def particiona(v, p, u):
+    x = v[p]
+    i = p-1
+    j = u+1
+    while True:
+        i += 1
+        j -= 1
+        while v[i] < x: i += 1
+        while v[j] > x: j -= 1
+        if i < j: troca(v, i, j)
+        else: return j
+
+
+
+def qs(v, p, u):
+    if p == u: return
+    m = particiona(v, p, u)
+    qs(v, p, m)
+    qs(v, m+1, u)
 
 
 

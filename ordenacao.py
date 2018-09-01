@@ -31,3 +31,7 @@ def hsort(v):
 
 def msort(v):
     ms(v, 0, len(v)-1)
+
+
+def qsort(v):
+    qs(v, 0, len(v)-1)
