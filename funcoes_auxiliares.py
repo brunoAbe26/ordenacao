@@ -112,7 +112,9 @@ def decrescente(v):
     return True
 
 
-def tempo(f, v):
+def tempo(f, v, retorna=False):
     t_inicial = time()
-    f(v)
-    print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time()-t_inicial))
+    if not retorna:
+        f(v)
+        print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time() - t_inicial))
+    else: return time() - t_inicial
