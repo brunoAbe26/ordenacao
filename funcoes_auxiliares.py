@@ -4,6 +4,14 @@ from random import sample, choice
 from time import time
 
 
+dict_algoritmos = {
+    'bsort': 'Bubble',
+    'ssort': 'Selection',
+    'isort': 'Insertion',
+    'hsort': 'Heap',
+    'msort': 'Merge'
+}
+
 def troca(v, i, j): v[i], v[j] = v[j], v[i]
 
 
@@ -76,6 +84,7 @@ def crescente(v):
 
 
 def tempo(f, v):
+
     t_inicial = time()
     f(v)
-    print('Tempo: %.3f' % (time()-t_inicial))
+    print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time()-t_inicial))
