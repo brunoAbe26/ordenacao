@@ -18,7 +18,7 @@ def gera_grafico(*f, N=(500, 5000, 500)):
 
         plot(n, T, color=cor[i], marker=marcador[i], label=nome)
         i += 1
-        print('{} Sort finalizado: {:.3f}'.format(nome, sum(T)))
+        print('{} finalizado: tempo total - {:.3f}s'.format(nome, sum(T)))
 
     xlabel('Tamanho')
     ylabel('Tempo')
