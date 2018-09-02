@@ -1,5 +1,6 @@
 #-*- coding: UTF-8 -*-
 from funcoes_auxiliares import *
+from grafico import gera_grafico
 
 def bsort(v):
     n = len(v)
