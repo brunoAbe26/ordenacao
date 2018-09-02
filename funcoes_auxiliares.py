@@ -117,4 +117,6 @@ def tempo(f, v, retorna=False):
     if not retorna:
         f(v)
         print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time() - t_inicial))
-    else: return time() - t_inicial
+    else:
+        f(v)
+        return time() - t_inicial
