@@ -4,14 +4,16 @@ from random import sample, choice
 from time import time
 
 
-dict_algoritmos = {
-    'bsort': 'Bubble',
-    'ssort': 'Selection',
-    'isort': 'Insertion',
-    'hsort': 'Heap',
-    'msort': 'Merge',
-    'qsort': 'Quick'
-}
+def get_nome_algoritmos():
+    dict_algoritmos = {
+        'bsort': 'Bubble Sort',
+        'ssort': 'Selection Sort',
+        'isort': 'Insertion Sort',
+        'hsort': 'Heap Sort',
+        'msort': 'Merge Sort',
+        'qsort': 'Quick Sort'
+    }
+    return dict_algoritmos
 
 def troca(v, i, j): v[i], v[j] = v[j], v[i]
 
@@ -113,10 +115,12 @@ def decrescente(v):
 
 
 def tempo(f, v, retorna=False):
+    dict_algoritmos = get_nome_algoritmos()
+    nome = dict_algoritmos[f.__name__]
     t_inicial = time()
     if not retorna:
         f(v)
-        print('Tempo do {} Sort: {:.3f}'.format(dict_algoritmos[f.__name__], time() - t_inicial))
+        print('Tempo do {}: {:.3f}'.format(nome, time() - t_inicial))
     else:
         f(v)
         return time() - t_inicial
