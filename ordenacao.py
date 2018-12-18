@@ -36,3 +36,9 @@ def msort(v):
 
 def qsort(v):
     qs(v, 0, len(v)-1)
+
+# n = int(input('Digite o tamanho do vetor: '))
+# v = seq(n)
+# tempo(qsort, v)
+
+gera_grafico(msort, qsort, N=(10**5, 10**6, 10**5))
